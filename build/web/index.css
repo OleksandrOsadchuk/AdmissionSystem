@@ -1,0 +1,132 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : May 31, 2016, 6:26:37 PM
+    Author     : oleksandr
+*/
+
+body{
+    font-family: Verdana, Arial;
+	
+}
+#top {
+    height:5vh;
+    background-color:black;
+    color:white;
+    font-size: 150%;
+	
+    font-family: Verdana, Arial;
+    text-align:center;
+    padding:15px;
+    box-shadow: 5px 5px 5px grey;
+
+}
+#nav {
+    line-height:50px;
+
+    height:80vh; /* css vh/vw unites */
+    width:15vw;
+    float:left;
+    padding:10px;
+}
+#middle {
+    width: 70vw;
+    margin: 0 auto;
+    float:left;
+    padding:2em; 
+    text-align:center;
+	
+}
+#footer {
+    background-color:black;
+    color:white;
+    clear:both;
+    text-align:center;
+    padding:5px; 
+}
+ul, li {
+    list-style-type:none;
+    padding-left:0px;
+    display:block;
+    width:100%;
+	
+}
+
+
+li a{
+    display:block;
+    width:14vw;
+    min-height:5vh;
+    background-color: black;
+    color: white;
+    text-align:center;
+    padding: 10px 5px;
+    margin:10px;
+    text-decoration: none;
+    border-radius: 4px 4px 4px 4px;
+	
+}
+
+li a:hover{
+    background-color: aqua;
+    color:black;
+}
+
+.midA{
+    margin-left: 20px;
+    margin-right: 10px;
+    background-color: black;
+    color: white;
+    text-align:center;
+    padding: 5px 5px;
+    text-decoration: none;
+    border-radius: 4px 4px 4px 4px;
+    font-size: 90%;
+}
+
+form{
+    
+    padding:10px;
+    margin:0 auto;
+    display:inline;
+}
+
+input[type=submit] {
+    background-color: black;
+    color: white;
+    padding: 5px 5px;
+    text-decoration: none;
+    border-radius: 4px 4px 4px 4px;
+    font-size: 90%;
+    border:none;
+}
+
+
+p{
+    margin-top: 2em;
+}
+
+a{
+    display: inline;
+    width: auto;
+    padding: 5px 5px;
+    white-space: nowrap;
+}
+
+table{
+    margin: 0 auto;
+    border: 1px solid grey;
+    border-collapse: collapse;
+}
+
+td,th{
+    padding: 10px 10px 10px 10px;
+    text-align: center;
+    border: 1px solid grey;
+}
+
+
+
