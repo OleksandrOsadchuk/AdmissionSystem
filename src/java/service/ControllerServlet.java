@@ -73,7 +73,6 @@ public class ControllerServlet extends HttpServlet {
                     request.setAttribute("tab", tabName);
                     break;
 
-
                 case "findId":
                     inputItem = this.setItemIdTabname(request);
                     if ((itemList = dao.selectId(inputItem)).isEmpty()) {
@@ -186,6 +185,22 @@ public class ControllerServlet extends HttpServlet {
                     url = "/form.jsp";
                     break;
 
+                case "email":
+                    String mailAddr = request.getParameter("mailAddr");
+                    if (mailAddr.matches("[a-z0-9](\\.?[a-z0-9_-]){0,}@[a-z0-9-]+\\.([a-z]{1,6}\\.)?[a-z]{2,6}")) {
+                        EmailSender sm = new EmailSender();
+                        OutputConverter outConv = new OutputConverter();
+                        String content = outConv.htmlOut(l);
+                        msg = sm.sendMail(mailAddr, content);
+                        outConv=null;
+                    } else {
+                        msg = "incorrect email address!";
+                    }
+                    url = "/index.jsp";
+                    request.setAttribute("list", l);
+                    request.setAttribute("message", msg);
+                    request.setAttribute("tab", tabName);
+                    break;
             }
 
         } catch (Exception ee) {
@@ -267,19 +282,25 @@ public class ControllerServlet extends HttpServlet {
     }
 
     private TableItem setItemIdTabname(HttpServletRequest request) {
-        tabName = request.getParameter("tab");    
-        
+        tabName = request.getParameter("tab");
+
         if (tabName.equalsIgnoreCase("Student")) {
-            inputItem=new Student();
-            inputItem.setId(Integer.parseInt(request.getParameter("id")));
+            inputItem = new Student();
+            if(request.getParameter("id")!="")inputItem.setId(Integer.parseInt(request.getParameter("id")));
+            else inputItem.setId(0);
         } else if (tabName.equalsIgnoreCase("Course")) {
-            inputItem=new Course();
-            inputItem.setId(Integer.parseInt(request.getParameter("id")));
+            inputItem = new Course();
+            if(request.getParameter("id")!="")inputItem.setId(Integer.parseInt(request.getParameter("id")));
+            else inputItem.setId(0);
         } else if (tabName.equalsIgnoreCase("Result")) {
-            Result re=new Result();
+            Result re = new Result();
+            if(request.getParameter("sid")!="")
             re.setStudentId(Integer.parseInt(request.getParameter("sid")));
+            else re.setStudentId(0);
+            if(request.getParameter("cid")!="")
             re.setCourseId(Integer.parseInt(request.getParameter("cid")));
-            inputItem=re;
+            else re.setCourseId(0);
+            inputItem = re;
         }
         return inputItem;
     }

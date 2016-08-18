@@ -58,8 +58,8 @@
                         <label>Find student by ID:</label><input type="number" name="id">
                         <input type="hidden" name="operation" value="findId">
                         <input type="hidden" name="tab" value="Student">
-                        <input type="submit" value="search!">
-                        <a class="midA" href="AppServlet?operation=addForm&tab=Student">Add a student</a>
+                        <input type="submit" value="search!" id="highlight">
+                        <a class="midA" href="AppServlet?operation=addForm&tab=Student" id="highlight">Add a student</a>
                     </form>
                     
                 <p>${message}</p>
@@ -92,7 +92,7 @@
                     <label>Get list by email: provide your address:</label><input type="text" name="mailAddr">
                     <input type="hidden" name="operation" value="email">
                     <input type="hidden" name="tab" value=${tab}>
-                    <input type="submit" value="get!">
+                    <input type="submit" value="get!" id="highlight">
                 </form> 
                 </c:when>
                  
@@ -102,8 +102,8 @@
                         <label>Find course by ID:</label><input type="number" name="id">
                         <input type="hidden" name="operation" value="findId">
                         <input type="hidden" name="tab" value="Course">
-                        <input type="submit" value="search!">
-                        <a class="midA" href="AppServlet?operation=addForm&tab=Course">Add a course</a>
+                        <input type="submit" value="search!" id="highlight">
+                        <a class="midA" href="AppServlet?operation=addForm&tab=Course" id="highlight">Add a course</a>
                     </form>
                     
                 <p>${message}</p>
@@ -129,7 +129,7 @@
                     <label>Get list by email: provide your address:</label><input type="text" name="mailAddr">
                     <input type="hidden" name="operation" value="email">
                     <input type="hidden" name="tab" value=${tab}>
-                    <input type="submit" value="get!">
+                    <input type="submit" value="get!" id="highlight">
                 </form> 
                 </c:when>
                 
@@ -141,8 +141,8 @@
                         <label>and cs Id:&nbsp</label><input type="number" name="cid" style="width:50px;">
                         <input type="hidden" name="operation" value="findId">
                         <input type="hidden" name="tab" value="Result">
-                        <input type="submit" value="search!">
-                        <a class="midA" href="AppServlet?operation=addForm&tab=Result">Add a result</a>
+                        <input type="submit" value="search!" id="highlight">
+                        <a class="midA" href="AppServlet?operation=addForm&tab=Result" id="highlight">Add a result</a>
                     </form>                  
                 <p>${message}</p>
                 <table>
@@ -171,7 +171,7 @@
                     <label>Get list by email: provide your address:</label><input type="text" name="mailAddr">
                     <input type="hidden" name="operation" value="email">
                     <input type="hidden" name="tab" value=${tab}>
-                    <input type="submit" value="get!">
+                    <input type="submit" value="get!" id="highlight">
                 </form> 
                 </c:when>
                 
