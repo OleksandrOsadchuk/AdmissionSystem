@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="beans.Result" table="RESULT">
+        <id name="id" type="int">
+            <column name="rid"/>
+            <generator class="assigned"/>
+        </id>
+        <property name="studentId" type="int">
+            <column name="studentid" length="4" />
+        </property>
+        <property name="courseId" type="int">
+            <column name="courseid" length="4" />
+        </property>
+       
+        <property name="mark1" type="int">
+            <column name="marks1"/>
+        </property>
+        <property name="mark2" type="int">
+            <column name="marks2"/>
+        </property>
+        
+    </class>
+</hibernate-mapping>

@@ -20,6 +20,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import beans.TableItem;
+import dao.DaoHibernate;
 import dao.DaoJDBC;
 
 /**
@@ -30,7 +31,8 @@ import dao.DaoJDBC;
 public class ControllerServlet extends HttpServlet {
 
     TableItem inputItem;
-    DaoJDBC dao;
+    //DaoJDBC dao;
+    DaoHibernate dao;
     String msg, tabName, op, url;
     List<TableItem> itemList;
     List l;
@@ -40,7 +42,7 @@ public class ControllerServlet extends HttpServlet {
             throws ServletException, IOException, SQLException, ClassNotFoundException {
 
         if (dao == null) {
-            dao = new DaoJDBC();
+            dao = new DaoHibernate(); //DaoJDBC(); //use hibernet this time 
         }
 
         try {

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="beans.Student" table="STUDENT">
+        <id name="id" type="int">
+            <column name="studentid"/>
+            <generator class="assigned"/>
+        </id>
+        <property name="firstName" type="string">
+            <column name="firstname" length="20" />
+        </property>
+        <property name="lastName" type="string">
+            <column name="lastname" length="20" />
+        </property>
+        <property name="gender" type="string">
+            <column name="gender" length="1" />
+        </property>
+        <property name="startDate" type="string">
+            <column name="startdate" length="10" />
+        </property>
+    </class>
+</hibernate-mapping>

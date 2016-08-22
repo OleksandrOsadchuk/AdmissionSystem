@@ -43,7 +43,7 @@ public class DaoJDBC {
             con.close();
         }
     }
-    
+
     public List selectAll(String tabName) throws SQLException, ClassNotFoundException {
 
         retList = new ArrayList();
@@ -51,8 +51,11 @@ public class DaoJDBC {
 
         try {
             query = "SELECT * FROM " + tabName;
-            if(tabName.equalsIgnoreCase("Result")) query+=" ORDER BY studentid, courseid";
-            else query+=" ORDER BY "+tabName+"id";
+            if (tabName.equalsIgnoreCase("Result")) {
+                query += " ORDER BY studentid, courseid";
+            } else {
+                query += " ORDER BY " + tabName + "id";
+            }
             ResultSet rSet = st.executeQuery(query);
 
             if (tabName.equalsIgnoreCase("student")) {
@@ -91,7 +94,7 @@ public class DaoJDBC {
         return retList;
 
     }
-    
+
     public List selectId(TableItem itm) throws SQLException, ClassNotFoundException {
         retList = new ArrayList();
         st = openConnection().createStatement();
@@ -148,6 +151,8 @@ public class DaoJDBC {
     public int insert(TableItem itm) throws SQLException, ClassNotFoundException {
         st = openConnection().createStatement();
         String query = "";
+        
+        if(selectId(itm).isEmpty()) return 0; //already exists, do not add
 
         try {
             if (itm.getClass().getSimpleName().equalsIgnoreCase("student")) {
